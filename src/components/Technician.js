@@ -46,24 +46,24 @@ const Technician = (props) => {
                         </div>
 
                         <div className="form-outline mx-3 my-2">
-                          <input type="text" id="customer_name" name='customer_name' className="form-control form-control-lg"
-                            placeholder="Enter Name here" onChange={onChange} value={booking.customer_name} />
+                          <input type="text" id="customer_name" name='customer_name' className="form-control form-control-lg" 
+                            placeholder="Enter Name here" onChange={onChange} value={booking.customer_name } />
                         </div>
 
                         <div className="form-outline mx-3 my-2">
-                          <input id={props.item._id} name={props.item._id} className="form-control form-control-lg"
-                             value={props.item._id} />
+                          <input id={props.item._id} name={props.item._id} className="form-control form-control-lg" readOnly
+                             value={props.item._id}  />
                         </div>
 
                           {/* <input id={props.item._id} name={props.item._id} className="form-control form-control-lg" 
                             placeholder="Enter provider id here" value={props.item._id} /> */}
 
                         <div className="form-outline mx-3 my-2">
-                          <input type="number" id="customer_phonenumber" name='customer_phonenumber' className="form-control form-control-lg"
+                          <input type="number" id="customer_phonenumber" name='customer_phonenumber' className="form-control form-control-lg" 
                             placeholder="Enter Phone Number here" onChange={onChange} value={booking.customer_phonenumber} />
                         </div>
                         <div className="form-outline mx-3 my-2">
-                          <input type="text" id="customer_address" name='customer_address' className="form-control form-control-lg"
+                          <input type="text" id="customer_address" name='customer_address' className="form-control form-control-lg" 
                             placeholder="Enter Address here" onChange={onChange} value={booking.customer_address} />
                         </div>
                         <div className="d-grid gap-2 col-2 mx-auto">

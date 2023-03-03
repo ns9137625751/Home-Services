@@ -1,0 +1,148 @@
+[1mdiff --git a/src/components/CarpenterService.js b/src/components/CarpenterService.js[m
+[1mindex 94b39a2..dd9d30a 100644[m
+[1m--- a/src/components/CarpenterService.js[m
+[1m+++ b/src/components/CarpenterService.js[m
+[36m@@ -17,7 +17,7 @@[m [mconst PlumbingService = () => {[m
+       <div className="container mt-5">[m
+         <div className="row">  [m
+         {providers && providers.map((item) => {[m
+[31m-           return <Technician item={item} key={item._id}/>[m
+[32m+[m[32m           return <Technician item={item} key={Math.random()}/>[m
+ })}[m
+         </div>[m
+       </div>[m
+[1mdiff --git a/src/components/CleaningService.js b/src/components/CleaningService.js[m
+[1mindex 26182b0..c7020c7 100644[m
+[1m--- a/src/components/CleaningService.js[m
+[1m+++ b/src/components/CleaningService.js[m
+[36m@@ -18,7 +18,7 @@[m [mconst PlumbingService = () => {[m
+         <div className="row">[m
+           [m
+         {providers && providers.map((item) => {[m
+[31m-           return <Technician item={item} key={item._id}/>[m
+[32m+[m[32m           return <Technician item={item} key={Math.random()}/>[m
+ })}[m
+         </div>[m
+       </div>[m
+[1mdiff --git a/src/components/ElectricainService.js b/src/components/ElectricainService.js[m
+[1mindex 8d791be..9a0ee3d 100644[m
+[1m--- a/src/components/ElectricainService.js[m
+[1m+++ b/src/components/ElectricainService.js[m
+[36m@@ -18,7 +18,7 @@[m [mconst PlumbingService = () => {[m
+         <div className="row">[m
+           [m
+         {providers && providers.map((item) => {[m
+[31m-           return <Technician item={item} key={item._id}/>[m
+[32m+[m[32m           return <Technician item={item} key={Math.random()}/>[m
+ })}[m
+         </div>[m
+       </div>[m
+[1mdiff --git a/src/components/HousekeepingService.js b/src/components/HousekeepingService.js[m
+[1mindex f146b68..628d489 100644[m
+[1m--- a/src/components/HousekeepingService.js[m
+[1m+++ b/src/components/HousekeepingService.js[m
+[36m@@ -19,7 +19,7 @@[m [mconst PlumbingService = () => {[m
+         <div className="row">[m
+           [m
+         {providers && providers.map((item) => {[m
+[31m-           return <Technician item={item} key={item._id}/>[m
+[32m+[m[32m           return <Technician item={item} key={Math.random()}/>[m
+ })}[m
+         </div>[m
+       </div>[m
+[1mdiff --git a/src/components/LoginCustomer.js b/src/components/LoginCustomer.js[m
+[1mindex 8109de7..ecc81dd 100644[m
+[1m--- a/src/components/LoginCustomer.js[m
+[1m+++ b/src/components/LoginCustomer.js[m
+[36m@@ -23,7 +23,7 @@[m [mconst LoginCustomer = (props) => {[m
+             // save the auth token and redirecting[m
+             localStorage.setItem('token', json.authtoken);[m
+             props.showAlert("Login Successfully", "success");[m
+[31m-            navigate('/')[m
+[32m+[m[32m            navigate('/services')[m
+         }[m
+         else {[m
+             props.showAlert("Email and password does't matched", "danger");[m
+[1mdiff --git a/src/components/Navbar.js b/src/components/Navbar.js[m
+[1mindex e8482ba..7d34288 100644[m
+[1m--- a/src/components/Navbar.js[m
+[1m+++ b/src/components/Navbar.js[m
+[36m@@ -5,7 +5,7 @@[m [mconst Navbar = (props) => {[m
+     const navigate = useNavigate();[m
+     const handleLogout=()=>{[m
+         localStorage.removeItem('token');[m
+[31m-        navigate('/logincustomer');[m
+[32m+[m[32m        navigate('/home');[m
+         props.showAlert("Logout Successfull","success");[m
+     }[m
+     [m
+[1mdiff --git a/src/components/PaintingService.js b/src/components/PaintingService.js[m
+[1mindex c12af5e..63f1472 100644[m
+[1m--- a/src/components/PaintingService.js[m
+[1m+++ b/src/components/PaintingService.js[m
+[36m@@ -17,7 +17,7 @@[m [mconst PlumbingService = () => {[m
+         <div className="row">[m
+           [m
+         {providers && providers.map((item) => {[m
+[31m-           return <Technician item={item} key={item._id}/>[m
+[32m+[m[32m           return <Technician item={item} key={Math.random()}/>[m
+ })}[m
+         </div>[m
+       </div>[m
+[1mdiff --git a/src/components/PlumbingService.js b/src/components/PlumbingService.js[m
+[1mindex a8f7e1c..fb5d525 100644[m
+[1m--- a/src/components/PlumbingService.js[m
+[1m+++ b/src/components/PlumbingService.js[m
+[36m@@ -15,12 +15,13 @@[m [mconst PlumbingService = () => {[m
+ [m
+   return ([m
+     <>[m
+[31m-<Authcheck />[m
+[32m+[m[32m      <Authcheck />[m
+       <div className="container mt-5">[m
+         <div className="row">[m
+[31m-          {providers && providers.map((item) => {[m
+[31m-           return <Technician item={item} key={item._id}/>[m
+[31m-})}[m
+[32m+[m[32m          {providers && providers.map((item,i) => {[m
+[32m+[m[32m            return <Technician item={item} key={Math.random()} />[m
+[32m+[m
+[32m+[m[32m          })}[m
+         </div>[m
+       </div>[m
+     </>[m
+[1mdiff --git a/src/components/Technician.js b/src/components/Technician.js[m
+[1mindex a87d821..535a408 100644[m
+[1m--- a/src/components/Technician.js[m
+[1m+++ b/src/components/Technician.js[m
+[36m@@ -46,24 +46,24 @@[m [mconst Technician = (props) => {[m
+                         </div>[m
+ [m
+                         <div className="form-outline mx-3 my-2">[m
+[31m-                          <input type="text" id="customer_name" name='customer_name' className="form-control form-control-lg"[m
+[31m-                            placeholder="Enter Name here" onChange={onChange} value={booking.customer_name} />[m
+[32m+[m[32m                          <input type="text" id="customer_name" name='customer_name' className="form-control form-control-lg"[m[41m [m
+[32m+[m[32m                            placeholder="Enter Name here" onChange={onChange} value={booking.customer_name } />[m
+                         </div>[m
+ [m
+                         <div className="form-outline mx-3 my-2">[m
+[31m-                          <input id={props.item._id} name={props.item._id} className="form-control form-control-lg"[m
+[31m-                             value={props.item._id} />[m
+[32m+[m[32m                          <input id={props.item._id} name={props.item._id} className="form-control form-control-lg" readOnly[m
+[32m+[m[32m                             value={props.item._id}  />[m
+                         </div>[m
+ [m
+                           {/* <input id={props.item._id} name={props.item._id} className="form-control form-control-lg" [m
+                             placeholder="Enter provider id here" value={props.item._id} /> */}[m
+ [m
+                         <div className="form-outline mx-3 my-2">[m
+[31m-                          <input type="number" id="customer_phonenumber" name='customer_phonenumber' className="form-control form-control-lg"[m
+[32m+[m[32m                          <input type="number" id="customer_phonenumber" name='customer_phonenumber' className="form-control form-control-lg"[m[41m [m
+                             placeholder="Enter Phone Number here" onChange={onChange} value={booking.customer_phonenumber} />[m
+                         </div>[m
+                         <div className="form-outline mx-3 my-2">[m
+[31m-                          <input type="text" id="customer_address" name='customer_address' className="form-control form-control-lg"[m
+[32m+[m[32m                          <input type="text" id="customer_address" name='customer_address' className="form-control form-control-lg"[m[41m [m
+                             placeholder="Enter Address here" onChange={onChange} value={booking.customer_address} />[m
+                         </div>[m
+                         <div className="d-grid gap-2 col-2 mx-auto">[m

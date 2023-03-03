@@ -15,12 +15,13 @@ const PlumbingService = () => {
 
   return (
     <>
-<Authcheck />
+      <Authcheck />
       <div className="container mt-5">
         <div className="row">
-          {providers && providers.map((item) => {
-           return <Technician item={item} key={item._id}/>
-})}
+          {providers && providers.map((item,i) => {
+            return <Technician item={item} key={Math.random()} />
+
+          })}
         </div>
       </div>
     </>

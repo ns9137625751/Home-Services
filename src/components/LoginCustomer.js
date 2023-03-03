@@ -23,7 +23,7 @@ const LoginCustomer = (props) => {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
             props.showAlert("Login Successfully", "success");
-            navigate('/')
+            navigate('/services')
         }
         else {
             props.showAlert("Email and password does't matched", "danger");
