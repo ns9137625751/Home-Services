@@ -18,7 +18,7 @@ const Contactus = (props) => {
     
     return (
         <>
-        <Authcheck/>
+        {/* <Authcheck/> */}
         {/* <Navbar /> */}
             <div className="container my-5">
                 <h1 className='text-center'>Write to Us</h1>

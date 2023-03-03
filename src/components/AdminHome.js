@@ -7,7 +7,6 @@ const AdminHome = () => {
         <>
             <Authcheck />
             <div className="container my-5">
-
                 <div className="row">
                     <div className="col-sm-4 mb-3 mb-sm-0">
                         <div className="card text-bg-success mb-3 text-decoration-none">
