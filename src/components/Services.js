@@ -4,7 +4,7 @@ import Authcheck from './Authcheck'
 const Services = () => {
     return (
         <>
-        <Authcheck/>
+        {/* <Authcheck/> */}
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-sm-3 my-3">

@@ -62,7 +62,6 @@ const Technician = (props) => {
                           <input type="number" id="customer_phonenumber" name='customer_phonenumber' className="form-control form-control-lg"
                             placeholder="Enter Phone Number here" onChange={onChange} value={booking.customer_phonenumber} />
                         </div>
-
                         <div className="form-outline mx-3 my-2">
                           <input type="text" id="customer_address" name='customer_address' className="form-control form-control-lg"
                             placeholder="Enter Address here" onChange={onChange} value={booking.customer_address} />

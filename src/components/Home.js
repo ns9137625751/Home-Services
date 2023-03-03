@@ -9,7 +9,7 @@ import Authcheck from './Authcheck';
 const Home = () => {
   return (
     <>
-      <Authcheck />
+{/* <Authcheck /> */}
       <HomeHeader />
       {/* --------------------------------------------------------------------------------------------------------- */}
       <div className="container">
