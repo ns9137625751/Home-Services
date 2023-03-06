@@ -18,7 +18,7 @@
 	top: 30%;
 	border-radius: 10px;
 	left: 20%;
-	background: rgba(255, 99, 71, 0.8);
+	background: #deeded;
 	backdrop-filter: saturate(180%) blur(10px);
 	box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
 }
@@ -28,7 +28,7 @@
 	top: 0.5rem;
 	right: 0.5rem;
 	border: none;
-	background-color: #ff826c;
+	background-color: #deeded;
 	font: 700 1.2rem "Roboto", sans-serif;
 	transition: 0.4s;
 }

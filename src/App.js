@@ -83,11 +83,11 @@ function App() {
 
 
                   <Route exact path="/plumbingservice" element={<PlumbingService showAlert={showAlert} />}></Route>
-                  <Route exact path="/electricianservice" element={<ElectricainService />}></Route>
-                  <Route exact path="/carpenterservice" element={<CarpenterService />}></Route>
-                  <Route exact path="/cleaningservice" element={<CleaningService />}></Route>
-                  <Route exact path="/housekeepingservice" element={<HousekeepingService />}></Route>
-                  <Route exact path="/paintingservice" element={<PaintingService />}></Route>
+                  <Route exact path="/electricianservice" element={<ElectricainService showAlert={showAlert}/>}></Route>
+                  <Route exact path="/carpenterservice" element={<CarpenterService showAlert={showAlert}/>}></Route>
+                  <Route exact path="/cleaningservice" element={<CleaningService showAlert={showAlert}/>}></Route>
+                  <Route exact path="/housekeepingservice" element={<HousekeepingService showAlert={showAlert}/>}></Route>
+                  <Route exact path="/paintingservice" element={<PaintingService showAlert={showAlert}/>}></Route>
 
                 </Routes>
                 <Footer />
