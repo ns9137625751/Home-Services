@@ -21,7 +21,7 @@ const Contactus = (props) => {
         {/* <Authcheck/> */}
         {/* <Navbar /> */}
             <div className="container my-5">
-                <h1 className='text-center'>Write to Us</h1>
+                <h1 className='text-center' style={{"color":"green"}}>Write to Us</h1>
                 <h4 className='text-center'>Get In Touch</h4>
                 <form className="row g-3">
                     <div className="col-md-6">

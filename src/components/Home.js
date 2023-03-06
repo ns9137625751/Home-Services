@@ -38,8 +38,8 @@ const Home = () => {
 
       {/*************************************************************************************************************/}
       <div className="container mt-5">
-        <p className="heading text-center display-6">Services</p>
-        <h1 className="heading text-center"><b> What we offer </b></h1>
+        <p className="heading text-center display-6" >Services</p>
+        <h1 className="heading text-center"><b style={{"color":"green"}}> What we offer </b></h1>
 
         <div className="container my-5" >
           <div id="carouselExampleDark" className="carousel carousel-dark slide" style={{ 'width': '370px', 'height': '560px', "margin": 'auto' }}>
