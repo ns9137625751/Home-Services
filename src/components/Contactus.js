@@ -3,9 +3,13 @@ import contactusContext from '../context/contactus/contactusContext'
 import Authcheck from './Authcheck';
 
 const Contactus = (props) => {
+
     const context = useContext(contactusContext);
+    
     const { addcontactus } = context;
+    
     const [contactus, setContactus] = useState({ name:"", email:"", phone_number:"", subject:"", message:"" })
+    
     const handleClick = (e) => {
         e.preventDefault();
         addcontactus(contactus.name, contactus.email, contactus.phone_number,contactus.subject,contactus.message);

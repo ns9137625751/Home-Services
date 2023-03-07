@@ -29,6 +29,8 @@ router.delete('/deletebooking/:id', [
     res.json({ "Success" : "booking has been Deleted" });
 })
 
+
+
 // get all customer for admin
 router.get('/getallcustomer', async (req, res) => {
     try {
@@ -41,9 +43,7 @@ router.get('/getallcustomer', async (req, res) => {
     }
 })
 
-
-
-//delete a provider from admin side
+//delete a customer from admin side
 router.delete('/deletecustomer/:id', [
 ], async (req, res) => {
 
@@ -54,6 +54,8 @@ router.delete('/deletecustomer/:id', [
     customer = await Customer.findOneAndDelete({_id : req.params.id})
     res.json({ "Success" : "Customer has been Deleted" });
 })
+
+
 
 // get all service provider for admin
 router.get('/getallprovider', async (req, res) => {

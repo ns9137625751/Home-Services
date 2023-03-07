@@ -2,7 +2,7 @@ var jwt = require('jsonwebtoken');
 const JWT_SECRET = "Nishant";
 
 
-fetchserviceprovider = (req,res,next)=>{
+const fetchserviceprovider = (req,res,next)=>{
     // Get the Customer from the jwt token and add id to req object
     const token = req.header('auth-token');
     if(!token){
@@ -12,10 +12,8 @@ fetchserviceprovider = (req,res,next)=>{
         const string = jwt.verify(token,JWT_SECRET);
         req.serviceprovider = string.serviceprovider;
         next();
-    }
-    catch (error){
+    }catch (error){
         res.status(401).send({error:"Please authenticate a valid token"})
-
     }
 }
 

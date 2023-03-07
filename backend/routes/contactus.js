@@ -5,7 +5,7 @@ var fetchcustomer = require('../middleware/fetchcustomer');
 const { body, validationResult } = require('express-validator');
 
 // Contact Us Form : Using POST:"/api/auth/contactus" Login Required
-router.post('/contactusform', fetchcustomer, [
+router.post('/contactusform', [
     body('name', "Enter a valid Name").isString(),
     body('email', "Enter a valid Email").isEmail(),
     body('phone_number', "Enter a valid Phone Number").isNumeric(),

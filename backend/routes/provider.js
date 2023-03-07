@@ -74,6 +74,16 @@ router.get('/getpaintingprovider', async (req, res) => {
     }
 })
 
+// get booking of service provider by 
+router.get('/fetchallbookings', fetchserviceprovider, async (req, res) => {
+    try {
+        const bookings = await Booking.find({ provider_id: req.serviceprovider.id }).select("-__v");
+        res.json(bookings)
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("internal error occured");
+    }
+})
 
 // Booking Form : Using POST:"/api/provider/booking" Login Required
 router.post('/booking', [
@@ -101,6 +111,8 @@ router.post('/booking', [
         res.status(500).send("Some error occured")
     }
 })
+
+
 
 
 module.exports = router;

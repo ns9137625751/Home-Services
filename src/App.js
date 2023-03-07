@@ -1,9 +1,7 @@
+import { useState } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route,Routes} from "react-router-dom";
+
 import Navbar from './components/Navbar';
 import Services from './components/Services';
 import Contactus from './components/Contactus';
@@ -16,7 +14,6 @@ import Signup from './components/Signup';
 import SignupServiceProvider from './components/SignupServiceProvider';
 import SignupCusomer from './components/SignupCustomer';
 
-import Login from './components/Login';
 import LoginCustomer from './components/LoginCustomer';
 import LoginServiceProvider from './components/LoginServiceProvider';
 
@@ -31,12 +28,13 @@ import HousekeepingService from './components/HousekeepingService';
 import PaintingService from './components/PaintingService';
 import ProviderState from './context/Providers/ProviderState';
 import BookingState from './context/booking/BookingState';
+import CustomerState from './context/customers/CustomerState';
 import AdminBookingState from './context/adminbooking/AdminBookingState';
+
 import Alerts from './components/Alerts';
-import { useState } from 'react';
 import AdminProvider from './components/AdminProvider';
 import AdminBooking from './components/AdminBooking';
-import CustomerState from './context/customers/CustomerState';
+import ProviderHome from './components/ProviderHome';
 
 function App() {
   const [alert, setAlert] = useState(null)
@@ -73,7 +71,11 @@ function App() {
                   <Route exact path="/adminhome/adminprovider" element={<AdminProvider showAlert={showAlert} />}></Route>
                   <Route exact path="/adminhome/adminbooking" element={<AdminBooking showAlert={showAlert} />}></Route>
 
-                  <Route exact path="/login" element={<Login />}></Route>
+                  <Route exact path="/providerhome" element={<ProviderHome />}></Route>
+                 
+
+
+                  <Route exact path="/login" element={<LoginCustomer />}></Route>
                   <Route exact path="/logincustomer" element={<LoginCustomer showAlert={showAlert} />}></Route>
                   <Route exact path="/loginserviceprovider" element={<LoginServiceProvider showAlert={showAlert} />}></Route>
 

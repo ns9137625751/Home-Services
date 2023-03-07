@@ -4,8 +4,12 @@ import providerContext from "./providersContext";
 const ProviderState = (props) => {
 
   const host = "http://localhost:5000"
+  
   const providerInitial = ["Nishant"]
+  const bookingsInitial = ["nishant"]
+
   const [providers, setProviders] = useState(providerInitial)
+  const [allbookings, setAllbookings] = useState(bookingsInitial)
 
   const getplumbingprovider = async () => {
     const response = await fetch(`${host}/api/provider/getplumbingprovider`, {
@@ -97,8 +101,21 @@ const ProviderState = (props) => {
     setProviders(newProvider)
   }
 
+  // get all bookings for providers
+    const fetchallbookings = async () => {
+      const response = await fetch(`${host}/api/provider/fetchallbookings`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'auth-token': localStorage.getItem('token')
+        }
+      });
+      const json = await response.json()
+      setAllbookings(json)
+    }
+
   return (
-    <providerContext.Provider value={{ providers, getplumbingprovider, getcarpenterprovider, getelectricianprovider, getcleaningprovider, gethousekeepingprovider, getpaintingprovider, getallprovider, deleteprovider }}>
+    <providerContext.Provider value={{ providers,allbookings, fetchallbookings,getplumbingprovider, getcarpenterprovider, getelectricianprovider, getcleaningprovider, gethousekeepingprovider, getpaintingprovider, getallprovider, deleteprovider }}>
       {props.children}
     </providerContext.Provider>
   )

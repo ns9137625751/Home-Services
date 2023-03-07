@@ -21,8 +21,6 @@ const Technician = (props) => {
             <button type="button" className="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>{setTrigger(true)}}>
               Book Now
             </button>
-
-            {/* <Modal item = {props.item}/> */}
             
           </div>
         </div >

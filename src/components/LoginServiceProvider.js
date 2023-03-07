@@ -19,11 +19,10 @@ const LoginServiceProvider = (props) => {
         });
 
         const json = await response.json()
-        console.log(json)
         if (json.success) {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
-            navigate('/')
+            navigate('/providerhome')
             props.showAlert("Login successfull" , "success")
         }
         else {

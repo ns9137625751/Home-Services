@@ -10,8 +10,7 @@ const ContactusState = (props) => {
         const response = await fetch(`${host}/api/contactus/contactusform`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ name, email, phone_number, subject, message })
         });
