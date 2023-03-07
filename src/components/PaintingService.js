@@ -85,7 +85,7 @@ const PlumbingService = (props) => {
             </div>
 
             <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
-              <button type="submit" className="btn btn-outline-success" onClick={handleClick} >Submit</button>
+              <button type="submit" className="btn btn-outline-success" onClick={handleClick} disabled={booking.customer_phonenumber.length < 10 || booking.customer_phonenumber.length > 10 }>Submit</button>
               <button className='btn btn-outline-success' onClick={() => setTrigger(false)} >close</button>
             </div>
 

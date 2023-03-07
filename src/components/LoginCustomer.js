@@ -57,7 +57,7 @@ const LoginCustomer = (props) => {
                                             placeholder="Enter password" value={credentials.password} onChange={onChange} />
                                     </div>
                                     <div className="text-center text-lg-start mt-4 pt-2">
-                                        <button type="submit" className="btn btn-outline-success">Login</button>
+                                        <button type="submit" className="btn btn-outline-success" >Login</button>
                                         <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/signupcustomer"
                                             className="link-danger">Register</Link></p>
                                     </div>

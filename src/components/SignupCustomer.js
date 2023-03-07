@@ -20,7 +20,6 @@ const SignupCusomer = (props) => {
         });
 
         const json = await response.json()
-        console.log(json)
         if (json.success) {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
@@ -28,7 +27,7 @@ const SignupCusomer = (props) => {
             props.showAlert("Signup successfully", "success")
         }
         else {
-            props.showAlert("Something went wrong", "danger")
+            props.showAlert("Enter Right Information", "danger")
         }
     }
     const onChange = (e) => {

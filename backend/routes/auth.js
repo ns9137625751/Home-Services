@@ -17,9 +17,9 @@ router.post('/createcustomer', [
     body('first_name', "Enter a valid First Name").isString(),
     body('last_name', "Enter a valid last name").isString(),
     body('email', "Enter a valid Email").isEmail(),
-    body('phone_number', "Enter a valid Phone Number").isNumeric(),
-    body('password', "Enter a Atleast 4 character in Password").isString(),
-    body('cpassword', "Enter a Atleast 4 character in Password").isString(),
+    body('phone_number', "Enter a valid Phone Number").isNumeric().isLength({min:10, max: 10 }),
+    body('password', "Enter a Atleast 4 character in Password").isString().isLength({min:4, max: 10 }),
+    body('cpassword', "Enter a Atleast 4 character in Password").isString().isLength({min:4, max: 10 })
 ], async (req, res) => {
     let success = false;
     // if there are errors return bad request and the errors
@@ -119,9 +119,9 @@ router.post('/createserviceprovider', [
     body('first_name', "Enter a valid First Name").isString(),
     body('last_name', "Enter a valid last name").isString(),
     body('email', "Enter a valid Email").isEmail(),
-    body('phone_number', "Enter a valid Phone Number").isNumeric(),
-    body('password', "Enter a Atleast 4 character in Password").isString(),
-    body('cpassword', "Enter a Atleast 4 character in Password").isString(),
+    body('phone_number', "Enter a valid Phone Number").isNumeric().isLength({min:10, max: 10 }),
+    body('password', "Enter a Atleast 4 character in Password").isString().isLength({min:4, max: 10 }),
+    body('cpassword', "Enter a Atleast 4 character in Password").isString().isLength({min:4, max: 10 }),
     body('type_of_service', "Enter a Right Service").isString(),
     body('visiting_charge', "Enter a valid Visiting Charge").isNumeric(),
     body('gender', "Enter a valid Gender").isString(),

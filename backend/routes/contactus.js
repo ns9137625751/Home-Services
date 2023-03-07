@@ -8,7 +8,7 @@ const { body, validationResult } = require('express-validator');
 router.post('/contactusform', [
     body('name', "Enter a valid Name").isString(),
     body('email', "Enter a valid Email").isEmail(),
-    body('phone_number', "Enter a valid Phone Number").isNumeric(),
+    body('phone_number', "Enter a valid Phone Number").isNumeric().isLength({min:10, max: 10 }),
     body('subject', "Enter a Valid Subject").isString(),
     body('message', "Enter a Valid Message").isString(),
 

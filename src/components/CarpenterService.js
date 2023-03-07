@@ -50,7 +50,7 @@ const PlumbingService = (props) => {
                   <h5 className="card-title"><b>Phone Number: </b>{item.phone_number} </h5>
                   <h5 className="card-title"><b>Visiting Charge: </b>{item.visiting_charge} </h5>
                   <h5 className="card-title"><b>Gender: </b>{item.gender} </h5>
-                  <button type="button" className="btn btn-outline-success mt-2" onClick={() => sample(item._id)}>
+                  <button type="button" className="btn btn-outline-success mt-2" onClick={() => sample(item._id)} >
                     Book Now
                   </button>
                 </div>
@@ -86,7 +86,7 @@ const PlumbingService = (props) => {
             </div>
 
             <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
-              <button type="submit" className="btn btn-outline-success" onClick={handleClick} >Submit</button>
+              <button type="submit" className="btn btn-outline-success" onClick={handleClick} disabled={booking.customer_phonenumber.length < 10 || booking.customer_phonenumber.length > 10 } >Submit</button>
               <button className='btn btn-outline-success' onClick={() => setTrigger(false)} >close</button>
             </div>
 

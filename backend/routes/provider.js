@@ -90,7 +90,7 @@ router.post('/booking', [
     body('provider_id', "Enter a valid provider_id").isString(),
     body('customer_name', "Enter a valid customer name").isString(),
     body('customer_address', "Enter a valid customer address").isString(),
-    body('customer_phonenumber', "Enter a valid customer Phone Number").isNumeric(),
+    body('customer_phonenumber', "Enter a valid customer Phone Number").isNumeric().isLength({min:10, max: 10 }),
 ], async (req, res) => {
     try {
         const { provider_id, customer_name, customer_address ,customer_phonenumber} = req.body;
