@@ -53,8 +53,7 @@ function App() {
         <ProviderState>
           <BookingState>
             <CustomerState>
-              <AdminBookingState>
-                
+              <AdminBookingState>    
               <Router>
                 <Navbar showAlert={showAlert} />
                 <Alerts alert={alert} />
