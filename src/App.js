@@ -59,7 +59,6 @@ function App() {
                 <Alerts alert={alert} />
 
                 <Routes>
-                  
                   <Route exact path="/" element={<Home />}></Route>
                   <Route exact path="/services" element={<Services />}></Route>
                   <Route exact path="/contactus" element={<Contactus showAlert={showAlert} />}></Route>
