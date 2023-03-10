@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import swal from 'sweetalert';
 import providerContext from '../context/Providers/providersContext'
 import Authcheck from './Authcheck';
 
@@ -28,7 +29,7 @@ const AdminProvider = (props) => {
                   <h5 className="card-title"><b>Visiting Charge: </b>{item.visiting_charge} </h5>
                   <h5 className="card-title"><b>Gender: </b>{item.gender} </h5>
                   <h5 className="card-title"><b>Id: </b>{item._id} </h5>
-                  <button type="button" className="btn btn-outline-danger" onClick={()=>{deleteprovider(item._id);props.showAlert("Note Deleted Successfully", "danger")}}>Delete Service Provider</button>
+                  <button type="button" className="btn btn-outline-danger" onClick={()=>{deleteprovider(item._id);swal("Deleted","Service Provider Account Deleted Successfully", "success") }}>Delete Service Provider</button>
 
                 </div>
               </div>

@@ -37,16 +37,6 @@ import AdminBooking from './components/AdminBooking';
 import ProviderHome from './components/ProviderHome';
 
 function App() {
-  const [alert, setAlert] = useState(null)
-  const showAlert = (message, type) => {
-    setAlert({
-      msg: message,
-      type: type
-    })
-    setTimeout(() => {
-      setAlert(null)
-    }, 2000);
-  }
   return (
     <>
       <ContactusState>
@@ -55,39 +45,36 @@ function App() {
             <CustomerState>
               <AdminBookingState>    
               <Router>
-                <Navbar showAlert={showAlert} />
+                <Navbar />
                 <Alerts alert={alert} />
 
                 <Routes>
                   <Route exact path="/" element={<Home />}></Route>
                   <Route exact path="/services" element={<Services />}></Route>
-                  <Route exact path="/contactus" element={<Contactus showAlert={showAlert} />}></Route>
-                  <Route exact path="/adminlogin" element={<AdminLogin showAlert={showAlert} />}></Route>
+                  <Route exact path="/contactus" element={<Contactus />}></Route>
+                  <Route exact path="/adminlogin" element={<AdminLogin />}></Route>
 
                   <Route exact path="/adminhome" element={<AdminHome />}></Route>
-                  <Route exact path="/adminhome/admincustomer" element={<AdminCustomer showAlert={showAlert} />}></Route>
-                  <Route exact path="/adminhome/adminprovider" element={<AdminProvider showAlert={showAlert} />}></Route>
-                  <Route exact path="/adminhome/adminbooking" element={<AdminBooking showAlert={showAlert} />}></Route>
+                  <Route exact path="/adminhome/admincustomer" element={<AdminCustomer />}></Route>
+                  <Route exact path="/adminhome/adminprovider" element={<AdminProvider />}></Route>
+                  <Route exact path="/adminhome/adminbooking" element={<AdminBooking />}></Route>
 
                   <Route exact path="/providerhome" element={<ProviderHome />}></Route>
-                 
-
 
                   <Route exact path="/login" element={<LoginCustomer />}></Route>
-                  <Route exact path="/logincustomer" element={<LoginCustomer showAlert={showAlert} />}></Route>
-                  <Route exact path="/loginserviceprovider" element={<LoginServiceProvider showAlert={showAlert} />}></Route>
+                  <Route exact path="/logincustomer" element={<LoginCustomer />}></Route>
+                  <Route exact path="/loginserviceprovider" element={<LoginServiceProvider />}></Route>
 
                   <Route exact path="/signup" element={<Signup />}></Route>
-                  <Route exact path="/signupserviceprovider" element={<SignupServiceProvider showAlert={showAlert} />}></Route>
-                  <Route exact path="/signupcustomer" element={<SignupCusomer showAlert={showAlert} />}></Route>
+                  <Route exact path="/signupserviceprovider" element={<SignupServiceProvider />}></Route>
+                  <Route exact path="/signupcustomer" element={<SignupCusomer />}></Route>
 
-
-                  <Route exact path="/plumbingservice" element={<PlumbingService showAlert={showAlert} />}></Route>
-                  <Route exact path="/electricianservice" element={<ElectricainService showAlert={showAlert}/>}></Route>
-                  <Route exact path="/carpenterservice" element={<CarpenterService showAlert={showAlert}/>}></Route>
-                  <Route exact path="/cleaningservice" element={<CleaningService showAlert={showAlert}/>}></Route>
-                  <Route exact path="/housekeepingservice" element={<HousekeepingService showAlert={showAlert}/>}></Route>
-                  <Route exact path="/paintingservice" element={<PaintingService showAlert={showAlert}/>}></Route>
+                  <Route exact path="/plumbingservice" element={<PlumbingService />}></Route>
+                  <Route exact path="/electricianservice" element={<ElectricainService/>}></Route>
+                  <Route exact path="/carpenterservice" element={<CarpenterService/>}></Route>
+                  <Route exact path="/cleaningservice" element={<CleaningService/>}></Route>
+                  <Route exact path="/housekeepingservice" element={<HousekeepingService/>}></Route>
+                  <Route exact path="/paintingservice" element={<PaintingService/>}></Route>
 
                 </Routes>
                 <Footer />
@@ -100,5 +87,4 @@ function App() {
     </>
   );
 }
-
 export default App;

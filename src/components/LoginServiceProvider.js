@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Login from './Login'
+import swal from 'sweetalert'
 
 const LoginServiceProvider = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
@@ -23,10 +24,10 @@ const LoginServiceProvider = (props) => {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
             navigate('/providerhome')
-            props.showAlert("Login successfull" , "success")
+            swal("Login","Login Successfully","success");
         }
         else {
-            props.showAlert("Email and Password Does not matched","danger")
+            swal("Opps!","Enter Right Email and Password","error");
         }
     }
     const onChange = (e) => {

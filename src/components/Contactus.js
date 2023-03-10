@@ -1,6 +1,6 @@
 import React, { useState ,useContext} from 'react'
 import contactusContext from '../context/contactus/contactusContext'
-import Authcheck from './Authcheck';
+import swal from 'sweetalert'
 
 const Contactus = (props) => {
 
@@ -14,7 +14,10 @@ const Contactus = (props) => {
         e.preventDefault();
         addcontactus(contactus.name, contactus.email, contactus.phone_number,contactus.subject,contactus.message);
         setContactus({name:"", email:"", phone_number:"", subject:"", message:""});
-        props.showAlert("Form submited successfully, We will Contact you as soon as Possible", "success")
+        // props.showAlert("Form submited successfully, We will Contact you as soon as Possible", "success")
+        // alert("Form submited successfully, We will Contact you as soon as Possible")
+        swal("Great!","Form submited successfully, We will Contact you as soon as Possible","success")
+
     }
     const onChange = (e) => {
         setContactus({ ...contactus, [e.target.name]: e.target.value })
@@ -22,8 +25,6 @@ const Contactus = (props) => {
     
     return (
         <>
-        {/* <Authcheck/> */}
-        {/* <Navbar /> */}
             <div className="container my-5">
                 <h1 className='text-center' style={{"color":"green"}}>Write to Us</h1>
                 <h4 className='text-center'>Get In Touch</h4>

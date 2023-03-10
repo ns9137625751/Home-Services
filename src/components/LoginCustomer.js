@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Login from './Login'
+import swal from 'sweetalert'
+
 
 const LoginCustomer = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
@@ -22,11 +24,13 @@ const LoginCustomer = (props) => {
         if (json.success) {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
-            props.showAlert("Login Successfully", "success");
+            // props.showAlert("Login Successfully", "success");
+            swal("Login","Login Successfully","success");
             navigate('/services')
         }
         else {
-            props.showAlert("Email and password does't matched", "danger");
+            // props.showAlert("Email and password does't matched", "danger");
+            swal("Opps!","Enter Right Email and Password","error");
         }
     }
     const onChange = (e) => {

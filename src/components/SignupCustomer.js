@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Signup from './Signup'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import swal from 'sweetalert'
 
 const SignupCusomer = (props) => {
     const [credentials, setCredentials] = useState({ first_name: "", last_name: "", phone_number: "", email: "", password: "", cpassword: "" })
@@ -24,10 +25,10 @@ const SignupCusomer = (props) => {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
             navigate('/')
-            props.showAlert("Signup successfully", "success")
+            swal("Signup","Signup successfully", "success")
         }
         else {
-            props.showAlert("Enter Right Information", "danger")
+            swal("Opps!","Enter Right Information", "error")
         }
     }
     const onChange = (e) => {

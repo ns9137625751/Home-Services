@@ -1,11 +1,21 @@
 import React from 'react'
+// import swal from '@sweetalert/with-react'
 
 const Alert = (props) => {
     return (
-        props.alert &&
-        <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            {props.alert.msg}
-        </div>
+        // props.alert &&
+        <>
+                {/* swal(
+                <div>
+                    <h1>
+                        hello world!
+                    </h1>
+                    <p>
+                        this is now rendered
+                    </p>
+                </div>
+                ) */}
+        </>
     )
 }
 

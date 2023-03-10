@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import swal from 'sweetalert'
 import Signup from './Signup'
 
 const SignupServiceProvider = (props) => {
@@ -25,10 +26,10 @@ const SignupServiceProvider = (props) => {
       // save the auth token and redirecting
       localStorage.setItem('token', json.authtoken);
       navigate('/')
-      props.showAlert("Signup successfully", "success")
+      swal("Signup","Signup successfully", "success")
     }
     else {
-      props.showAlert("Something went wrong", "danger")
+      swal("Opps!","Enter Right Information", "error")
     }
   }
   const onChange = (e) => {

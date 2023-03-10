@@ -1,12 +1,13 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import {Link} from "react-router-dom";
+import swal from 'sweetalert';
 const Navbar = (props) => {
     const navigate = useNavigate();
     const handleLogout=()=>{
         localStorage.removeItem('token');
         navigate('/home');
-        props.showAlert("Logout Successfull","success");
+        swal("Logout","Logout successfull","success")
     }
     
     return (

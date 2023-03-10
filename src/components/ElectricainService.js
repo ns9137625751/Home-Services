@@ -3,6 +3,7 @@ import providerContext from '../context/Providers/providersContext'
 import Authcheck from './Authcheck';
 import PopUp from "../pop-up/popUp"
 import bookingContext from '../context/booking/bookingContext'
+import swal from 'sweetalert';
 
 
 const PlumbingService = (props) => {
@@ -29,8 +30,9 @@ const PlumbingService = (props) => {
     e.preventDefault();
     addbooking(id, booking.customer_name, booking.customer_address, booking.customer_phonenumber);
     setBooking({ provider_id: "", customer_name: "", customer_address: "", customer_phonenumber: "" });
-    setTrigger(false)
-    props.showAlert("Booking successfully completed", "success");
+    setTrigger(false);
+    swal("Great!","Booking successfully completed","success");
+    
   }
   const onChange = (e) => {
     setBooking({ ...booking, [e.target.name]: e.target.value })

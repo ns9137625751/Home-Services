@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import swal from 'sweetalert';
 import customerContext from '../context/customers/customersContext';
 import Authcheck from './Authcheck';
 
@@ -23,7 +24,7 @@ const AdminCustomer = (props) => {
                   <h5 className="card-title"><b>Phone Number: </b>{item.phone_number} </h5>
                   <h5 className="card-title"><b>Date of Created Account: </b>{item.date} </h5>
                   <h5 className="card-title"><b>ID: </b>{item._id} </h5>
-                  <button type="button" className="btn btn-outline-danger" onClick={()=>{deletecustomer(item._id);props.showAlert("Note Deleted Successfully", "danger")}}>Delete Customer</button>
+                  <button type="button" className="btn btn-outline-danger" onClick={()=>{deletecustomer(item._id);swal("Opps!","Customer Deleted Successfully",'error')}}>Delete Customer</button>
 
                 </div>
               </div>
