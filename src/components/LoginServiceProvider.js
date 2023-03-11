@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Login from './Login'
 import swal from 'sweetalert'
 
-const LoginServiceProvider = (props) => {
+const LoginServiceProvider = () => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     let navigate = useNavigate()
 
@@ -42,7 +42,6 @@ const LoginServiceProvider = (props) => {
                     <div className="container-fluid h-custom">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                             <div className="col-md-9 col-lg-6 col-xl-5">
-                                {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" */}
                                 <img src="https://www.bursar.psu.edu/sites/bursar/files/styles/image_cropper/public/news/login_for_feature.jpg?itok=ZYO6Ik2U&c=542520393ce4b28264a797cde36e2840"
                                     className="img-fluid" alt='nishant' />
                             </div>

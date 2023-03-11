@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert'
 import Signup from './Signup'
 
-const SignupServiceProvider = (props) => {
+const SignupServiceProvider = () => {
   const [credentials, setCredentials] = useState({ first_name: "", last_name: "", phone_number: "", email: "", password: "", cpassword: "", type_of_service: "", visiting_charge: "", gender: "" })
   let navigate = useNavigate()
 

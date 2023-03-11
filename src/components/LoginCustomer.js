@@ -5,7 +5,7 @@ import Login from './Login'
 import swal from 'sweetalert'
 
 
-const LoginCustomer = (props) => {
+const LoginCustomer = () => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     let navigate = useNavigate()
 
@@ -24,12 +24,10 @@ const LoginCustomer = (props) => {
         if (json.success) {
             // save the auth token and redirecting
             localStorage.setItem('token', json.authtoken);
-            // props.showAlert("Login Successfully", "success");
             swal("Login","Login Successfully","success");
             navigate('/services')
         }
         else {
-            // props.showAlert("Email and password does't matched", "danger");
             swal("Opps!","Enter Right Email and Password","error");
         }
     }

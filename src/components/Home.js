@@ -5,12 +5,10 @@ import { IoIosPeople } from "react-icons/io";
 import { BiTimeFive } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import HomeHeader from './HomeHeader';
-import Authcheck from './Authcheck';
 const Home = () => {
   return (
     <>
-{/* <Authcheck /> */}
-      <HomeHeader />
+    <HomeHeader />
       {/* --------------------------------------------------------------------------------------------------------- */}
       <div className="container">
         <h1 className="heading text-center my-5"><b> Why Use Home Services System ? </b></h1>

@@ -6,7 +6,7 @@ import bookingContext from '../context/booking/bookingContext'
 import swal from 'sweetalert';
 
 
-const PlumbingService = (props) => {
+const PlumbingService = () => {
 
   const context = useContext(providerContext);
   const contextt = useContext(bookingContext);

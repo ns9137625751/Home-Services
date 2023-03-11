@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 import bookingContext from '../context/adminbooking/bookingContext';
 import Authcheck from './Authcheck';
 
-const AdminBooking = (props) => {
+const AdminBooking = () => {
   const context = useContext(bookingContext);
   const { bookings, getallbookings } = context;
   const { deletebooking } = context;

@@ -1,20 +1,11 @@
 import React from 'react'
-// import swal from '@sweetalert/with-react'
+import Swal from "sweetalert2";
 
-const Alert = (props) => {
+const Alert = () => {
+    
     return (
-        // props.alert &&
         <>
-                {/* swal(
-                <div>
-                    <h1>
-                        hello world!
-                    </h1>
-                    <p>
-                        this is now rendered
-                    </p>
-                </div>
-                ) */}
+        
         </>
     )
 }

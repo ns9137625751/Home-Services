@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import {Link} from "react-router-dom";
 import swal from 'sweetalert';
-const Navbar = (props) => {
+const Navbar = () => {
     const navigate = useNavigate();
     const handleLogout=()=>{
         localStorage.removeItem('token');

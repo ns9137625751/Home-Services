@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert'
 
-const SignupCusomer = (props) => {
+const SignupCusomer = () => {
     const [credentials, setCredentials] = useState({ first_name: "", last_name: "", phone_number: "", email: "", password: "", cpassword: "" })
     let navigate = useNavigate()
 

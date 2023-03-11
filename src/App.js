@@ -35,6 +35,7 @@ import Alerts from './components/Alerts';
 import AdminProvider from './components/AdminProvider';
 import AdminBooking from './components/AdminBooking';
 import ProviderHome from './components/ProviderHome';
+import Providers from './components/Providers';
 
 function App() {
   return (
@@ -46,7 +47,6 @@ function App() {
               <AdminBookingState>    
               <Router>
                 <Navbar />
-                <Alerts alert={alert} />
 
                 <Routes>
                   <Route exact path="/" element={<Home />}></Route>
@@ -70,11 +70,13 @@ function App() {
                   <Route exact path="/signupcustomer" element={<SignupCusomer />}></Route>
 
                   <Route exact path="/plumbingservice" element={<PlumbingService />}></Route>
-                  <Route exact path="/electricianservice" element={<ElectricainService/>}></Route>
-                  <Route exact path="/carpenterservice" element={<CarpenterService/>}></Route>
-                  <Route exact path="/cleaningservice" element={<CleaningService/>}></Route>
-                  <Route exact path="/housekeepingservice" element={<HousekeepingService/>}></Route>
-                  <Route exact path="/paintingservice" element={<PaintingService/>}></Route>
+                  <Route exact path="/electricianservice" element={<ElectricainService />}></Route>
+                  <Route exact path="/carpenterservice" element={<CarpenterService />}></Route>
+                  <Route exact path="/cleaningservice" element={<CleaningService />}></Route>
+                  <Route exact path="/housekeepingservice" element={<HousekeepingService />}></Route>
+                  <Route exact path="/paintingservice" element={<PaintingService />}></Route>
+
+                  <Route exact path="/providers" element={<Providers />}></Route>
 
                 </Routes>
                 <Footer />

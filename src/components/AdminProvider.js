@@ -4,14 +4,13 @@ import providerContext from '../context/Providers/providersContext'
 import Authcheck from './Authcheck';
 
 
-const AdminProvider = (props) => {
+const AdminProvider = () => {
   const context = useContext(providerContext);
   const { providers, getallprovider } = context;
   const { deleteprovider } = context;
   useEffect(() => {
     getallprovider();
   }, [1])
-
 
   return (
     <>

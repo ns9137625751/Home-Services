@@ -5,12 +5,11 @@ import PopUp from "../pop-up/popUp"
 import bookingContext from '../context/booking/bookingContext'
 import swal from 'sweetalert';
 
-
-const PlumbingService = () => {
+const Providers = (props) => {
   const context = useContext(providerContext);
   const contextt = useContext(bookingContext);
 
-  const { providers, getcarpenterprovider } = context;
+  const { providers, getplumbingprovider } = context;
   const { addbooking } = contextt;
 
   const [id, setId] = useState("")
@@ -18,7 +17,7 @@ const PlumbingService = () => {
   const [booking, setBooking] = useState({ provider_id: "", customer_name: "", customer_address: "", customer_phonenumber: "" })
 
   useEffect(() => {
-    getcarpenterprovider();
+    getplumbingprovider();
   }, [1])
 
   const sample = (id) => {
@@ -31,7 +30,8 @@ const PlumbingService = () => {
     addbooking(id, booking.customer_name, booking.customer_address, booking.customer_phonenumber);
     setBooking({ provider_id: "", customer_name: "", customer_address: "", customer_phonenumber: "" });
     setTrigger(false)
-    swal("Great!","Booking successfully completed","success");
+    swal("Great!", "Booking successfully completed", "success")
+
   }
   const onChange = (e) => {
     setBooking({ ...booking, [e.target.name]: e.target.value })
@@ -51,7 +51,7 @@ const PlumbingService = () => {
                   <h5 className="card-title"><b>Phone Number: </b>{item.phone_number} </h5>
                   <h5 className="card-title"><b>Visiting Charge: </b>{item.visiting_charge} </h5>
                   <h5 className="card-title"><b>Gender: </b>{item.gender} </h5>
-                  <button type="button" className="btn btn-outline-success mt-2" onClick={() => sample(item._id)} >
+                  <button type="button" className="btn btn-outline-success mt-2" onClick={() => sample(item._id)}>
                     Book Now
                   </button>
                 </div>
@@ -87,7 +87,7 @@ const PlumbingService = () => {
             </div>
 
             <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
-              <button type="submit" className="btn btn-outline-success" onClick={handleClick} disabled={booking.customer_phonenumber.length < 10 || booking.customer_phonenumber.length > 10 } >Submit</button>
+              <button type="submit" className="btn btn-outline-success" onClick={handleClick} disabled={booking.customer_phonenumber.length < 10 || booking.customer_phonenumber.length > 10} >Submit</button>
               <button className='btn btn-outline-success' onClick={() => setTrigger(false)} >close</button>
             </div>
 
@@ -97,4 +97,4 @@ const PlumbingService = () => {
   )
 }
 
-export default PlumbingService
+export default Providers

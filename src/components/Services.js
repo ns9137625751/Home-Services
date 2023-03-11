@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Authcheck from './Authcheck'
 const Services = () => {
     return (
         <>
-        {/* <Authcheck/> */}
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-sm-3 my-3">
@@ -15,7 +13,7 @@ const Services = () => {
                                 <p className="card-text mx-2 mb-3 text-center">Plumbing services are provided by professionals who specialize in the installation, maintenance, and repair of plumbing systems in residential, commercial, and industrial properties. Plumbers are trained to work with a wide range of plumbing systems and components, including pipes, fixtures, water heaters, and sewage systems. <br /> Plumbing services can include a variety of tasks, such as installing new plumbing systems, upgrading existing systems, troubleshooting plumbing issues, and repairing or replacing faulty components.</p>
                             </div>
                             <div className="d-grid gap-2 mx-auto mb-3">
-                                <Link type="button" className="btn btn-outline-success" to="/plumbingservice">Book</Link>
+                                <Link type="button" className="btn btn-outline-success" to="/providers">Book</Link>
                             </div>
                         </div>
                     </div>

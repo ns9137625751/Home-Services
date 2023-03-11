@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert'
 
-const AdminLogin = (props) => {
+const AdminLogin = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   let navigate = useNavigate()
 

@@ -7,7 +7,6 @@ const ProviderNavbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate('/home');
-        // props.showAlert("Logout Successfull","success");
     }
     return (
         <>

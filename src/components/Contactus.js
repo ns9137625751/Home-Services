@@ -2,10 +2,9 @@ import React, { useState ,useContext} from 'react'
 import contactusContext from '../context/contactus/contactusContext'
 import swal from 'sweetalert'
 
-const Contactus = (props) => {
+const Contactus = () => {
 
     const context = useContext(contactusContext);
-    
     const { addcontactus } = context;
     
     const [contactus, setContactus] = useState({ name:"", email:"", phone_number:"", subject:"", message:"" })
@@ -14,10 +13,7 @@ const Contactus = (props) => {
         e.preventDefault();
         addcontactus(contactus.name, contactus.email, contactus.phone_number,contactus.subject,contactus.message);
         setContactus({name:"", email:"", phone_number:"", subject:"", message:""});
-        // props.showAlert("Form submited successfully, We will Contact you as soon as Possible", "success")
-        // alert("Form submited successfully, We will Contact you as soon as Possible")
-        swal("Great!","Form submited successfully, We will Contact you as soon as Possible","success")
-
+        swal("Great!","Form submited successfully, We will Contact you as soon as Possible.","success")
     }
     const onChange = (e) => {
         setContactus({ ...contactus, [e.target.name]: e.target.value })
