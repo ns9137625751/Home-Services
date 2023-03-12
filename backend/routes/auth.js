@@ -7,11 +7,10 @@ const { body, validationResult } = require('express-validator');
 var bcrypt = require('bcryptjs');
 var fetchcustomer = require('../middleware/fetchcustomer');
 var fetchserviceprovider = require('../middleware/fetchserviceprovider');
-
 const JWT_SECRET = "Nishant";
 var jwt = require('jsonwebtoken');
 
-// -------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------//
 // Route 1:  create a user using : POST "/api/auth/createuser".  no Login required
 router.post('/createcustomer', [
     body('first_name', "Enter a valid First Name").isString(),
@@ -99,18 +98,6 @@ router.post('/customerlogin', [
     }
 })
 
-// Route 3: get Loggedin User Details : POST "/api/auth/getuser" . login required
-router.post('/getcustomer', fetchcustomer, async (req, res) => {
-    try {
-        customerId = req.customer.id;
-        const customer = await Customer.findById(customerId).select("-password")
-        res.send(customer)
-    }
-    catch (error) {
-        console.error(error.message);
-        res.status(500).send("Some error occured");
-    }
-})
 
 //----------------------------------------------------------------------------------------------------//
 
@@ -208,18 +195,6 @@ router.post('/serviceproviderlogin', [
     }
 })
 
-// Route 3.1: get Loggedin User Details : POST "/api/auth/getserviceprovider" . login required
-router.post('/getserviceprovider', fetchserviceprovider, async (req, res) => {
-    try {
-        serviceproviderId = req.serviceprovider.id;
-        const serviceprovider = await ServiceProvider.findById(serviceproviderId).select("-password")
-        res.send(serviceprovider)
-    }
-    catch (error) {
-        console.error(error.message);
-        res.status(500).send("Some error occured");
-    }
-})
 // ---------------------------------------------------------------------------------------------------//
 
 // Route 1.2:  create a admin using : POST "/api/auth/createadmin".  no Login required

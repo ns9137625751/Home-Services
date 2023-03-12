@@ -2,6 +2,7 @@ var express = require('express');
 const router = express.Router();
 const Booking = require("../models/Booking");
 const Customer = require("../models/Customer");
+const ContactUs = require("../models/ContactUs");
 const ServiceProvider = require("../models/ServiceProvider");
 
 
@@ -23,10 +24,10 @@ router.delete('/deletebooking/:id', [
 
     // find the note to be delete and delete it
     let booking = await Booking.findById(req.params.id);
-    if (!booking) { return res.status(404).send("Note Found") }
+    if (!booking) { return res.status(404).send("Booking was Not Found") }
 
     booking = await Booking.findOneAndDelete({_id : req.params.id})
-    res.json({ "Success" : "booking has been Deleted" });
+    res.json({ "Success" : "Booking has been Deleted" });
 })
 
 
@@ -47,9 +48,9 @@ router.get('/getallcustomer', async (req, res) => {
 router.delete('/deletecustomer/:id', [
 ], async (req, res) => {
 
-    // find the note to be delete and delete it
+    // find the Customer to be delete and delete it
     let customer = await Customer.findById(req.params.id);
-    if (!customer) { return res.status(404).send("Note Found") }
+    if (!customer) { return res.status(404).send("Not Found") }
     console.log(req.params.id)
     customer = await Customer.findOneAndDelete({_id : req.params.id})
     res.json({ "Success" : "Customer has been Deleted" });
@@ -73,11 +74,37 @@ router.get('/getallprovider', async (req, res) => {
 router.delete('/deleteprovider/:id', [
 ], async (req, res) => {
 
-    // find the note to be delete and delete it
+    // find the Serviec Provider to be delete and delete it
     let provider = await ServiceProvider.findById(req.params.id);
     if (!provider) { return res.status(404).send("Note Found") }
 
     provider = await ServiceProvider.findOneAndDelete({_id : req.params.id})
     res.json({ "Success" : "Provider has been Deleted" });
 })
+
+
+// Get all Contact Us Form for admin
+router.get('/getallcontactus', async (req, res) => {
+    try {
+        const contactus = await ContactUs.find({})
+        res.send(contactus)
+    }
+    catch (error) {
+        console.error(error.message);
+        res.status(500).send("Some error occured");
+    }
+})
+
+//delete a provider from admin side
+router.delete('/deletecontactus/:id', [
+], async (req, res) => {
+
+    // find the Serviec Provider to be delete and delete it
+    let contactus = await ContactUs.findById(req.params.id);
+    if (!contactus) { return res.status(404).send("Note Found") }
+
+    contactus = await ContactUs.findOneAndDelete({_id : req.params.id})
+    res.json({ "Success" : "Contact Us form has been Deleted" });
+})
+
 module.exports = router;

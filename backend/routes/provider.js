@@ -112,7 +112,4 @@ router.post('/booking', [
     }
 })
 
-
-
-
 module.exports = router;

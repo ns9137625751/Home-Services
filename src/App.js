@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route,Routes} from "react-router-dom";
 
@@ -31,11 +30,12 @@ import BookingState from './context/booking/BookingState';
 import CustomerState from './context/customers/CustomerState';
 import AdminBookingState from './context/adminbooking/AdminBookingState';
 
-import Alerts from './components/Alerts';
 import AdminProvider from './components/AdminProvider';
 import AdminBooking from './components/AdminBooking';
 import ProviderHome from './components/ProviderHome';
 import Providers from './components/Providers';
+import Confirmpassword from './components/Confirmpassword';
+import AdminContactUs from './components/AdminContactUs';
 
 function App() {
   return (
@@ -58,6 +58,7 @@ function App() {
                   <Route exact path="/adminhome/admincustomer" element={<AdminCustomer />}></Route>
                   <Route exact path="/adminhome/adminprovider" element={<AdminProvider />}></Route>
                   <Route exact path="/adminhome/adminbooking" element={<AdminBooking />}></Route>
+                  <Route exact path="/adminhome/admincontactus" element={<AdminContactUs />}></Route>
 
                   <Route exact path="/providerhome" element={<ProviderHome />}></Route>
 
@@ -77,6 +78,10 @@ function App() {
                   <Route exact path="/paintingservice" element={<PaintingService />}></Route>
 
                   <Route exact path="/providers" element={<Providers />}></Route>
+
+
+                  <Route exact path="/confirmpassword" element={<Confirmpassword />}></Route>
+
 
                 </Routes>
                 <Footer />

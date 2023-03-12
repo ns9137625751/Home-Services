@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 import swal from 'sweetalert';
-import bookingContext from '../context/adminbooking/bookingContext';
+import adminbookingContext from '../context/adminbooking/adminbookingContext';
 import Authcheck from './Authcheck';
 
 const AdminBooking = () => {
-  const context = useContext(bookingContext);
+  const context = useContext(adminbookingContext);
   const { bookings, getallbookings } = context;
   const { deletebooking } = context;
   useEffect(() => {

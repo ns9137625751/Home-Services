@@ -1,5 +1,5 @@
 import { useState } from "react";
-import bookingContext from "./bookingContext";
+import adminbookingContext from "./adminbookingContext";
 
 
 const AdminBookingState = (props) => {
@@ -22,7 +22,7 @@ const AdminBookingState = (props) => {
 
     // delete a booking from admin side
     const deletebooking = async (id) => {
-        const response = await fetch(`${host}/api/customer/deletebooking/${id}`, {
+        const response = await fetch(`${host}/api/admin/deletebooking/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,12 +32,10 @@ const AdminBookingState = (props) => {
         const newBooking = bookings.filter((bookings) => { return bookings._id !== id })
         setBooking(newBooking)
     }
-
-
     return (
-        <bookingContext.Provider value={{ bookings, getallbookings, deletebooking }}>
+        <adminbookingContext.Provider value={{ bookings, getallbookings, deletebooking }}>
             {props.children}
-        </bookingContext.Provider>
+        </adminbookingContext.Provider>
     )
 }
 export default AdminBookingState;

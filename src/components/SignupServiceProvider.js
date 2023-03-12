@@ -26,14 +26,36 @@ const SignupServiceProvider = () => {
       // save the auth token and redirecting
       localStorage.setItem('token', json.authtoken);
       navigate('/')
-      swal("Signup","Signup successfully", "success")
+      swal("Signup", "Signup successfully", "success")
     }
     else {
-      swal("Opps!","Enter Right Information", "error")
+      swal("Opps!", "Enter Right Information", "error")
     }
   }
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
+    validateInput(e);
+  }
+  const [error, setError] = useState({ username: '', password: '', cpassword: '' })
+
+  const validateInput = e => {
+    let { name, value } = e.target;
+    setError(prev => {
+      const stateObj = { ...prev, [name]: "" };
+      switch (name) {case "password":
+          if (credentials.cpassword && value !== credentials.cpassword) {
+            stateObj["cpassword"] = "!Password and Confirm Password does not match.";
+          } else {stateObj["cpassword"] = credentials.cpassword ? "" : error.cpassword;}
+          break;
+        case "cpassword":
+          if (credentials.password && value !== credentials.password) {
+            stateObj[name] = "!Password and Confirm Password does not match.";}
+          break;
+        default:
+          break;
+      }
+      return stateObj;
+    });
   }
 
   return (
@@ -69,13 +91,16 @@ const SignupServiceProvider = () => {
                     <input type="number" id="phone_number" name='phone_number' className="form-control form-control-lg"
                       placeholder="Enter a Phone Number here" onChange={onChange} />
                   </div>
+
                   <div className="form-outline mb-3">
                     <input type="password" id="password" name='password' className="form-control form-control-lg"
-                      placeholder="Enter a password here" onChange={onChange} />
+                      placeholder="Enter a password here" autoComplete="on" value={credentials.password} onChange={onChange} onBlur={validateInput} />
+                    {error.password && <span className='err' style={{ "color": "red" }}>{error.password}</span>}
                   </div>
                   <div className="form-outline mb-3">
                     <input type="password" id="cpassword" name='cpassword' className="form-control form-control-lg"
-                      placeholder="Enter a Confirm password" onChange={onChange} />
+                      placeholder="Enter a Confirm password" autoComplete="on" value={credentials.cpassword} onChange={onChange} onBlur={validateInput} />
+                    {error.cpassword && <span className='err' style={{ "color": "red" }}>{error.cpassword}</span>}
                   </div>
 
                   <select className="form-control form-control-lg selectpicker mb-4" id='type_of_service' name='type_of_service' onChange={onChange}>

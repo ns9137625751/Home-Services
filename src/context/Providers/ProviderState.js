@@ -4,7 +4,7 @@ import providerContext from "./providersContext";
 const ProviderState = (props) => {
 
   const host = "http://localhost:5000"
-  
+
   const providerInitial = ["Nishant"]
   const bookingsInitial = ["nishant"]
 
@@ -102,20 +102,34 @@ const ProviderState = (props) => {
   }
 
   // get all bookings for providers
-    const fetchallbookings = async () => {
-      const response = await fetch(`${host}/api/provider/fetchallbookings`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'auth-token': localStorage.getItem('token')
-        }
-      });
-      const json = await response.json()
-      setAllbookings(json)
-    }
+  const fetchallbookings = async () => {
+    const response = await fetch(`${host}/api/provider/fetchallbookings`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('token')
+      }
+    });
+    const json = await response.json()
+    setAllbookings(json)
+  }
+
+  // delete a booking from Service Provider side
+  const deletebooking = async (id) => {
+    const response = await fetch(`${host}/api/admin/deletebooking/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const json = response.json();
+    const newBooking = allbookings.filter((bookings) => { return bookings._id !== id })
+    setAllbookings(newBooking)
+  }
+
 
   return (
-    <providerContext.Provider value={{ providers,allbookings, fetchallbookings,getplumbingprovider, getcarpenterprovider, getelectricianprovider, getcleaningprovider, gethousekeepingprovider, getpaintingprovider, getallprovider, deleteprovider }}>
+    <providerContext.Provider value={{ providers, allbookings, fetchallbookings, getplumbingprovider, getcarpenterprovider, getelectricianprovider, getcleaningprovider, gethousekeepingprovider, getpaintingprovider, getallprovider, deleteprovider, deletebooking }}>
       {props.children}
     </providerContext.Provider>
   )

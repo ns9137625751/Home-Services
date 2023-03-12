@@ -1,7 +1,6 @@
 const express = require('express');
 const ContactUs = require('../models/ContactUs');
 const router = express.Router();
-var fetchcustomer = require('../middleware/fetchcustomer');
 const { body, validationResult } = require('express-validator');
 
 // Contact Us Form : Using POST:"/api/auth/contactus" Login Required

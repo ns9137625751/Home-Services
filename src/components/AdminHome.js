@@ -32,6 +32,14 @@ const AdminHome = () => {
                             </Link>
                         </div>
                     </div>
+                    <div className="col-sm-4 mb-3 mb-sm-0">
+                        <div className="card text-bg-dark mb-3 text-decoration-none">
+                            <Link to="admincontactus" className="card-body text-decoration-none">
+                                <h5 className="card-title text-center">All Contact Us Data</h5>
+                                <p className="card-text text-center">If you want to show all Contact Us Data than Click here.</p>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
